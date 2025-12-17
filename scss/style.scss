@@ -1,4 +1,4 @@
-$primary: #4caf50;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
@@ -19,12 +19,92 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    font-family: "Montserrat", sans-serif;
 
     main {
-        .container {
-            .calc-display {}
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-            .calc-btns {}
+        .container {
+            position: relative;
+            width: 250px;
+            min-height: 450px;
+
+            .blur-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 2rem;
+                min-height: inherit;
+                width: inherit;
+                border-radius: 16px;
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+                color: #fff;
+            }
+
+            .calculator {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100px;
+                width: 100%;
+
+                .calc-display {
+                    margin: 50px 20px;
+                    text-align: right;
+
+                    .calc-display-upper-nums {
+                        font-size: 14px;
+                        color: #000;
+                        line-height: 1.2;
+                    }
+
+                    .calc-display-lower-nums {
+                        font-size: 28px;
+                        font-weight: 600;
+                        color: #000;
+                        line-height: 1.2;
+                        padding: 10px 0;
+                    }
+                }
+
+                .calc-btns {
+
+                    .btns-group {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        gap: 10px;
+
+                        button {
+                            height: 40px;
+                            width: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 5px 0;
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: #fff;
+                            // padding: 15px;
+                            outline: none;
+                            border-radius: 10px;
+                            background: rgba(255, 255, 255, 0.25);
+                            backdrop-filter: blur(10px);
+                            -webkit-backdrop-filter: blur(10px);
+                            border: 1px solid rgba(255, 255, 255, 0.3);
+                            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
         }
     }
 }
