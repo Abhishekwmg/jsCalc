@@ -23,39 +23,41 @@
                 </div>
                 <div class="calc-btns">
                     <div class="btns-group">
-                        <button>AC</button>
-                        <button><i class="fa-solid fa-delete-left"></i></button>
-                        <button>/</button>
-                        <button>*</button>
+                        <button class="calc-buttons" data-value="reset">AC</button>
+                        <button class="calc-buttons" data-value="delete"><i
+                                class="fa-solid fa-delete-left"></i></button>
+                        <button class="calc-buttons" data-operator="/">/</button>
+                        <button class="calc-buttons" data-operator="*">*</button>
                     </div>
                     <div class="btns-group">
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
-                        <button>-</button>
+                        <button class="calc-buttons" data-value="7">7</button>
+                        <button class="calc-buttons" data-value="8">8</button>
+                        <button class="calc-buttons" data-value="9">9</button>
+                        <button class="calc-buttons" data-operator="-">-</button>
                     </div>
                     <div class="btns-group">
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                        <button>+</button>
+                        <button class="calc-buttons" data-value="4">4</button>
+                        <button class="calc-buttons" data-value="5">5</button>
+                        <button class="calc-buttons" data-value="6">6</button>
+                        <button class="calc-buttons" data-operator="+">+</button>
                     </div>
                     <div class="btns-group">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>=</button>
+                        <button class="calc-buttons" data-value="1">1</button>
+                        <button class="calc-buttons" data-value="2">2</button>
+                        <button class="calc-buttons" data-value="3">3</button>
+                        <button class="calc-buttons" data-operator="=">=</button>
                     </div>
                     <div class="btns-group">
-                        <button>0</button>
-                        <button>.</button>
-                        <button>fn</button>
-                        <button>fn</button>
+                        <button class="calc-buttons" data-value="0">0</button>
+                        <button class="calc-buttons" data-value=".">.</button>
+                        <button class="calc-buttons" data-operator="fn">fn</button>
+                        <button class="calc-buttons" data-operator="fn">fn</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <script src="calc.js"></script>
 </body>
 
 </html>

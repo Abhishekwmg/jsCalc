@@ -40,7 +40,8 @@ body {
                 min-height: inherit;
                 width: inherit;
                 border-radius: 16px;
-                background: rgba(255, 255, 255, 0.15);
+                // background: rgba(255, 255, 255, 0.15);
+                background: linear-gradient(135deg, rgb(211 211 174), rgb(136 150 211));
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
                 border: 1px solid rgba(255, 255, 255, 0.3);
@@ -89,8 +90,8 @@ body {
                             align-items: center;
                             justify-content: center;
                             margin: 5px 0;
-                            font-size: 16px;
-                            font-weight: 600;
+                            font-size: 18px;
+                            font-weight: 100;
                             color: #fff;
                             // padding: 15px;
                             outline: none;
