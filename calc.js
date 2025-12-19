@@ -7,38 +7,62 @@ let calcStr = "";
 
 calcBtns.forEach((btns) => {
     btns.addEventListener('click', (e) => {
-        // console.log(e);
-        let calcValue = e.target.dataset.value;
-        let calcOperator = e.target.dataset.operator;
-        calcUpperText.textContent = calcValue ? calcValue : calcOperator;
 
-        [calcValue, calcOperator].forEach((v) => {
-            if (v !== undefined) calcNum.push(v);
-        })
+        const { value, operator } = e.target.dataset;
 
-        if (calcOperator === "=") {
+        if (value === 'reset') {
+            calcNum = [];
+            calcUpperText.textContent = "0";
+            calcLowerText.textContent = "0";
+            return;
+        }
+
+        if (value === "delete") {
+            calcNum.pop();
+            calcUpperText.textContent = calcNum.join("") || 0;
+            return;
+        }
+
+        if (operator === "=") {
+            if (calcNum.length < 3) return;
             performOperation(calcNum);
             calcNum = [];
+            return;
         }
+
+        if (value) {
+            let last = calcNum[calcNum.length - 1];
+            if (value === "." && last?.includes?.(".")) return;
+
+            calcNum.push(value);
+        }
+
+        if (operator) {
+            let last = calcNum[calcNum.length - 1];
+
+            if (!calcNum.length) return;
+
+
+            if (["+", "-", "*", "/"].includes(last)) {
+                calcNum[calcNum.length - 1] = operator;
+            } else {
+                calcNum.push(operator);
+            }
+        }
+
+        calcUpperText.textContent = calcNum.join("");
 
     })
 })
 
 const performOperation = (numArr) => {
-    numArr.pop();
-    let evaluate = "";
-    numArr.map((arr) => evaluate += arr);
-    let result = eval(evaluate);
-    calcLowerText.textContent = result;
+    const expression = numArr.join("");
+    calcUpperText.textContent = expression;
+
+    try {
+        const result = Function(`return ${expression}`)();
+        calcLowerText.textContent = Number.isInteger(result) ? result : result.toFixed(3);
+    } catch {
+        calcLowerText.textContent = "Error";
+    }
 }
-
-// let num = 1 + 2 + 3 + 4;
-// console.log(num);
-
-/*
-Plan for a Calculator.
-
-Now I have all the inputs from the calculator into a set of array
-[1,2,3,+,5];
-
-*/
